@@ -1,0 +1,3 @@
+C:/Users/SAM/Documents/SSPU/C++/isbn/cmake-build-debug/CMakeFiles/isbn.dir
+C:/Users/SAM/Documents/SSPU/C++/isbn/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/SAM/Documents/SSPU/C++/isbn/cmake-build-debug/CMakeFiles/rebuild_cache.dir
