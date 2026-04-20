@@ -18,9 +18,9 @@ class ISBN {
     int region;
     int publisher;
 
-    bool check_isbn(std::string isbn);
-    bool check_string(std::string str);
-    bool check_number(int num);
+    std::string check_isbn(std::string isbn, std::string error_message);
+    std::string check_string(std::string str, bool contains_numbers, std::string error_message);
+    int check_number(int num,int min, int max);
 
 public:
     ISBN();
@@ -38,10 +38,11 @@ public:
     int get_prefix();
     int get_region();
     int get_publisher();
-    void get_clean_isbn();
+    std::string get_clean_isbn();
     int get_isbn_length();
     std::string get_author();
-
+    std::string get_book_name();
+    std::string get_isbn();
     friend std::ostream& operator<<(std::ostream& os, const ISBN &isbn);
 };
 
