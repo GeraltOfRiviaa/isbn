@@ -3,6 +3,8 @@
 //
 
 #include "ISBN.h"
+#include <iostream>
+#include <string>
 
 bool ISBN::check_isbn(std::string isbn) {
 }
@@ -13,10 +15,16 @@ bool ISBN::check_string(std::string str) {
 bool ISBN::check_number(int num) {
 }
 
-ISBN::ISBN() {
+ISBN::ISBN(){
+    this->author =  "J. K. Rowlingová";
+    this->book_name = "Harry Potter a tajemná komnata";
+    this->isbn = "80-00-00898-X";
+    this->region = 80;
+    this->publisher = 00;
+    this->prefix = 0;
 }
 
-ISBN::ISBN(ISBN &code) {
+ISBN::ISBN(ISBN &object): author(object.get_author()){
 }
 
 ISBN::ISBN(std::string isbn, std::string name, std::string author) {
@@ -38,29 +46,37 @@ void ISBN::set_book(std::string isbn, std::string name, std::string author) {
 }
 
 int ISBN::get_prefix() {
-    return prefix;
+    return this->prefix;
 }
 
 int ISBN::get_region() {
-    return region;
+    return this->region;
 }
 
 int ISBN::get_publisher() {
-    return publisher;
+    return this->publisher;
 }
 
-std::string ISBN::get_clean_isbn() {
+void ISBN::get_clean_isbn() {
+    std::string temp = this->isbn;
+    std::size_t position;
+    do {
+        position = isbn.find('-');
 
-    std::string character ("-");
+        // different member versions of find in the same order as above:
+        if (position !=std::string::npos) {
+            temp.erase(position, 1);
+        }
 
-    // different member versions of find in the same order as above:
-    std::size_t found = str.find(str2);
-    if (found!=std::string::npos)
-        std::cout << "first 'needle' found at: " << found << '\n';
-
+    }while (position !=std::string::npos);
+    std::cout << "Ciste ISBN: " << temp <<std::endl;
 }
 
 int ISBN::get_isbn_length() {
+}
+
+std::string ISBN::get_author() {
+    return this->author;
 }
 
 std::ostream & operator<<(std::ostream &os, const ISBN &isbn) {

@@ -9,14 +9,14 @@
 
 class ISBN {
 
-    const int max_string = 200;
-    const int min_string = 1;
-    const std::string author = "J. K. Rowlingová";
-    const std::string book_name = "Harry Potter a tajemná komnata";
-    const std::string isbn = "80-00-00898-X";
-    const std::string prefix;
-    const int region = 80;
-    const int publisher = 00;
+    int max_string = 200;
+    int min_string = 1;
+    std::string author;
+    std::string book_name;
+    std::string isbn;
+    int prefix;
+    int region;
+    int publisher;
 
     bool check_isbn(std::string isbn);
     bool check_string(std::string str);
@@ -38,8 +38,9 @@ public:
     int get_prefix();
     int get_region();
     int get_publisher();
-    std::string get_clean_isbn();
+    void get_clean_isbn();
     int get_isbn_length();
+    std::string get_author();
 
     friend std::ostream& operator<<(std::ostream& os, const ISBN &isbn);
 };
