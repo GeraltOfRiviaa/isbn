@@ -22,6 +22,7 @@ class ISBN {
 
 
     std::string check_isbn(std::string isbn);
+
     std::string check_string(std::string str, bool contains_numbers, std::string error_message);
     //int check_number(int num,int min, int max);
     void read_isbn_parts(std::string isbn);
