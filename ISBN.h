@@ -24,33 +24,50 @@ class ISBN {
     std::string check_isbn(std::string isbn);
 
     std::string check_string(std::string str, bool contains_numbers, std::string error_message);
+
     //int check_number(int num,int min, int max);
     void read_isbn_parts(std::string isbn);
+
     bool prefix_present(std::string isbn);
 
 public:
     ISBN();
+
     ISBN(ISBN &object);
-    ISBN(std::string isbn,std::string name, std::string author);
+
+    ISBN(std::string isbn, std::string name, std::string author);
+
     ~ISBN();
 
     //set
     void set_isbn(std::string isbn);
+
     void set_author(std::string author);
+
     void set_name(std::string name);
-    void set_book(std::string isbn,std::string name, std::string author);
+
+    void set_book(std::string isbn, std::string name, std::string author);
 
     //get
-    std::string get_prefix();
-    std::string get_region();
-    std::string get_publisher();
-    std::string get_issue();
-    std::string get_clean_isbn(std::string isbn);
-    int get_isbn_length(std::string isbn);
-    std::string get_author();
-    std::string get_book_name();
-    std::string get_isbn();
-    friend std::ostream& operator<<(std::ostream& os, const ISBN &isbn);
+    std::string get_prefix() const;
+
+    std::string get_region() const;
+
+    std::string get_publisher() const;
+
+    std::string get_issue() const;
+
+    std::string get_clean_isbn(std::string isbn) const;
+
+    int get_isbn_length(std::string isbn) const;
+
+    std::string get_author() const;
+
+    std::string get_book_name() const;
+
+    std::string get_isbn() const;
+
+    friend std::ostream &operator<<(std::ostream &os, const ISBN &isbn);
 
 };
 

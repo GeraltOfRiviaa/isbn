@@ -197,19 +197,19 @@ void ISBN::set_name(std::string name) {
 void ISBN::set_book(std::string isbn, std::string name, std::string author) {
 }
 
-std::string ISBN::get_prefix() {
+std::string ISBN::get_prefix() const{
     return this->prefix;
 }
 
-std::string ISBN::get_region() {
+std::string ISBN::get_region() const{
     return this->region;
 }
 
-std::string ISBN::get_publisher() {
+std::string ISBN::get_publisher() const{
     return this->publisher;
 }
 
-std::string ISBN::get_clean_isbn(std::string isbn) {
+std::string ISBN::get_clean_isbn(std::string isbn) const{
     std::string temp = isbn;
     std::size_t position = 0;
     do {
@@ -223,12 +223,12 @@ std::string ISBN::get_clean_isbn(std::string isbn) {
     return temp;
 }
 
-int ISBN::get_isbn_length(std::string isbn) {
+int ISBN::get_isbn_length(std::string isbn) const{
     std::string temp = get_clean_isbn(isbn);
     return (int)temp.length();
 }
 
-std::string ISBN::get_author() {
+std::string ISBN::get_author() const{
     return this->author;
 }
 
@@ -239,11 +239,11 @@ std::ostream &operator<<(std::ostream &os, const ISBN &isbn) {
     return os;
 }
 
-std::string ISBN::get_book_name() {
+std::string ISBN::get_book_name() const{
     return this->book_name;
 }
 
-std::string ISBN::get_isbn() {
+std::string ISBN::get_isbn() const{
     return this->isbn;
 }
 
@@ -274,7 +274,7 @@ void ISBN::read_isbn_parts(std::string isbn) {
     isbn.erase(0, position + 1);
 }
 
-std::string ISBN::get_issue() {
+std::string ISBN::get_issue() const{
     return this->issue;
 }
 
